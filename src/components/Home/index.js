@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TemperatureModal from 'containers/TemperatureModal';
 import WeightModal from 'containers/WeightModal';
 import MenstruationModal from 'containers/MenstruationModal';
+import {signInWithAnonymous} from 'actions/auth';
 
 class Home extends Component {
   constructor(props){
@@ -13,6 +14,7 @@ class Home extends Component {
     }
   }
   componentDidUpdate(prevProps, prevState) {
+    signInWithAnonymous();
     if (this.state.temperature !== prevState.temperature) {
       console.log(this.state.temperature)
     }
